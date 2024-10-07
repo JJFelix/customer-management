@@ -1,0 +1,120 @@
+.nav {
+    background-color: #414042;
+    display: flex;
+    /* flex-direction: column; */
+    color: white;
+    padding: 0.5em 2em 0.5em 2em;
+  }
+  
+  .name-logo {
+    /* background-color: darkcyan;   */
+    font-size: 30px;
+  }
+
+  .below-500 {
+    /* background-color: red; */
+    display: flex;
+    margin-left: auto;
+    gap: 12em;
+    padding: .5em;
+  }
+  
+  .nav-list {
+    /* background-color: grey; */
+    padding: 0;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap: 1.5em;
+    margin-bottom: 0;
+    margin-left: auto;
+  }
+  .nav-links {
+    /* background-color: white; */
+    display: flex;
+    color: #ffffff;
+    /* font-weight: bold; */
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-links:hover {
+    color: grey;
+  }
+  
+  .auth-list {
+    /* background-color: darkgoldenrod; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    gap: 1em;
+    color: #ffffff;
+  }
+  
+  .auth-links {
+    color: #414042;
+    text-decoration: none;
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 3px 3px;
+    border-radius: 3px;
+  }
+  
+  @media screen and (max-width: 966px) {
+    .nav {
+      padding: 0.25em 2em 0.25em 2em;
+    }
+    .name-logo {
+      font: 20px;
+    }
+    .below-500 {
+      gap: 10em;
+    }
+  }
+  
+  @media screen and (max-width: 775px) {
+      .name-logo{
+          margin: auto;
+      }
+  
+      .below-500{
+          /* background-color: red; */
+          margin: auto;
+          gap: 10em;
+      }
+  }
+  
+  @media screen and (max-width: 550px) {
+    .nav {
+      padding: 0.5em;
+      width: 100%;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+    .name-logo {
+      margin: auto;
+      /* background-color: darkcyan; */
+    }
+  
+    .below-500 {
+      display: flex;
+      /* margin: auto; */
+      gap: 3.9em;
+      /* background-color: red; */
+    }
+  
+    .nav-list {
+      /* background-color: grey; */
+      display: flex;
+      gap: 0.5em;
+      margin-left: 0;
+    }
+    .nav-links {
+      font-size: 16px;
+      font-weight: normal;
+    }
+    .auth-list {
+      /* background-color: darkgoldenrod; */
+      gap: 0.5em;
+    }
+  }
