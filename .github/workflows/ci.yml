@@ -21,9 +21,9 @@ jobs:
         ports: 
           - 5432:5432
         env:
-          DB_USER: user
-          DB_PASSWORD: password
-          DB_NAME: mydb
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+          POSTGRES_NAME: mydb
         options: >-
           --health-cmd "pg_isready -U user -d mydb"
           --health-interval 10s
