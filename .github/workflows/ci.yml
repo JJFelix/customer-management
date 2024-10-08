@@ -27,4 +27,4 @@ jobs:
         pip install -r customer_management_api/requirements.txt
     - name: Run Tests
       run: |
-        python  customer_management_api/manage.py ./customer_management_api/customers/test
+        python  customer_management_api/manage.py tests
