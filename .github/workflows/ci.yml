@@ -45,6 +45,9 @@ jobs:
     #     python customer_management_api/manage.py test customers
 
     - name: Run tests with coverage
+      env:
+          AFRICAS_TALKING_USERNAME: ${{ secrets.AFRICAS_TALKING_USERNAME }}
+          AFRICAS_TALKING_API_KEY: ${{ secrets.AFRICAS_TALKING_API_KEY }}
       run: |
         coverage run --source="." customer_management_api/manage.py test customers
         coverage report
