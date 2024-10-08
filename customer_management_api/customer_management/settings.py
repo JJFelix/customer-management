@@ -93,12 +93,19 @@ DATABASES = {
         'PASSWORD': os.getenv('DB_PASSWORD'),
         'HOST': os.getenv('DB_HOST', default='localhost'),
         'PORT': os.getenv('DB_PORT', default='5432'),
-        'TEST': {
-            'NAME': 'testdb',
-        },
+        # 'TEST': {
+        #     'NAME': 'testdb',
+        # },
     }
 }
 
+if os.getenv('GITHUB_ACTIONS'):
+    DATABASES = {
+        'default: {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': ':memory:',
+        }
+    } 
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
