@@ -31,6 +31,6 @@ jobs:
 
     - name: Run tests with coverage
       run: |
-        coverage run --source="." manage.py test
+        coverage run --source="." customer_management_api/manage.py test
         coverage report
-        coverage html
+        coverage html        
