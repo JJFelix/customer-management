@@ -101,7 +101,7 @@ DATABASES = {
 
 if os.getenv('GITHUB_ACTIONS'):
     DATABASES = {
-        'default: {
+        'default': {
                 'ENGINE': 'django.db.backends.sqlite3',
                 'NAME': ':memory:',
         }
