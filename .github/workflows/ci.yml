@@ -53,8 +53,15 @@ jobs:
         coverage report
         coverage html   
 
-    - name: Upload coverage report
-      uses: actions/upload-artifact@v3
+    # - name: Upload coverage report
+    #   uses: actions/upload-artifact@v3
+    #   with:
+    #     name: coverage-report
+    #     path: customer_management_api/htmlcov
+
+    - name: Deploy to Render
+      uses: johnbeynon/deploy-action@v1
       with:
-        name: coverage-report
-        path: customer_management_api/htmlcov
+          service-id: ${{ secrets.RENDER_SERVICE_ID }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+          wait-for-success: true
