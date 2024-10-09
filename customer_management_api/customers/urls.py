@@ -8,6 +8,7 @@ urlpatterns = [
     path("logout", views.logout, name="logout"),
     path("callback", views.callback, name="callback"),
     path("is_logged_in", views.is_logged_in, name="is_logged_in"),
+    path("test", views.test, name="test"),
 
 
     # customers

@@ -39,7 +39,7 @@ def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
     # send token to frontend
-    return redirect(f"http://localhost:5173")#?token={token["access_token"]}")
+    return redirect(f"customer-management-client.onrender.com")#?token={token["access_token"]}")
 
 
 def logout(request):
@@ -50,7 +50,7 @@ def logout(request):
         + urlencode(
             {
                 # "returnTo": request.build_absolute_uri(reverse("index")),
-                "returnTo": "http://localhost:5173/",
+                "returnTo": "customer-management-client.onrender.com",
                 "client_id": settings.AUTH0_CLIENT_ID,
             },
             quote_via=quote_plus,
@@ -79,6 +79,10 @@ def is_logged_in(request):
     else:
         return Response({"logged_in": False}, status=status.HTTP_401_UNAUTHORIZED)
 
+# test page
+@api_view(['GET'])
+def test(request):
+    return Response({"message": "Test successful"}, status=status.HTTP_200_OK)
 
 @api_view(['GET'])
 def get_customers(request):
