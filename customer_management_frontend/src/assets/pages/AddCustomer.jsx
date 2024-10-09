@@ -19,7 +19,7 @@ const AddCustomer = () => {
         axios
         .post(`${backend_url}/api/customers/add/`, userData)
         .then((response)=>{
-            console.log(response.data)    
+            // console.log(response.data)    
             navigate('/customers')        
         })
         .catch((error)=>{

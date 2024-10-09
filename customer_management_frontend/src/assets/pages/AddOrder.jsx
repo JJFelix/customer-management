@@ -44,7 +44,7 @@ const AddOrder = () => {
         axios
         .post(`${backend_url}/api/orders/add`, orderData)
         .then((response) => {
-            console.log('Order added successfully:', response.data)
+            // console.log('Order added successfully:', response.data)
             // Redirect to the orders page or show a success message
             navigate('/orders')
         })

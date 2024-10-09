@@ -31,7 +31,7 @@ const Orders = () => {
     axios.
     delete(`${backend_url}/api/orders/delete/${order_id}`)
     .then((response) => {
-      console.log(response.data.success);
+      // console.log(response.data.success);
       // Filter out the deleted order from the state
       setOrders((prevOrders) => ({
         ...prevOrders,

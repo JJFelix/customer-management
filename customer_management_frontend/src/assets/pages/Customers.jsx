@@ -19,7 +19,7 @@ const Customers = () => {
     })
   }, [])
 
-  console.log(customers?.data);  
+  // console.log(customers?.data);  
 
   return (
     <div className='main-wrapper'>

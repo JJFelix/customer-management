@@ -13,7 +13,7 @@ const CustomerOrder = () => {
     axios
     .get(`${backend_url}/api/customers/${customer_id}`)
     .then((response)=>{
-      console.log(response.data)
+      // console.log(response.data)
       setCustomer(response.data)      
     })
     .catch((error)=>{
@@ -21,7 +21,7 @@ const CustomerOrder = () => {
     })
   }, [])
 
-  console.log("Customer data: ", customer?.customer, customer?.orders)
+  // console.log("Customer data: ", customer?.customer, customer?.orders)
   
   return (
     <div className='main-wrapper'>
