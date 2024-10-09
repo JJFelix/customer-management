@@ -63,7 +63,7 @@ const Orders = () => {
             <p><strong>Amount: </strong>{order.amount}</p>
             <p><strong>Date: </strong>{dateTime(order.time)}</p>
             {/* <Link className='btn btn-primary' to={{pathname:`/customers/${order.customer}`}}>Click to see Customer</Link> */}
-            <Link className='btn btn-success m-1'>Completed</Link>
+            {/* <Link className='btn btn-success m-1'>Completed</Link> */}
             <Link className='btn btn-danger m-1' onClick={() => handleDeleteOrder(order.order_id)}>Delete</Link>
           </div>
         ))}
