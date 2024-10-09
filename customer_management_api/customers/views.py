@@ -30,7 +30,8 @@ oauth.register(
 # login endpoint
 @api_view(['GET'])
 def login(request):
-    redirect_uri = request.build_absolute_uri(reverse("callback"))
+    # redirect_uri = request.build_absolute_uri(reverse("callback"))
+    redirect_uri = "https://customer-management-api-grx3.onrender.com/api/callback"
     return oauth.auth0.authorize_redirect(request, redirect_uri)
 
 # callback endpoint after successful login

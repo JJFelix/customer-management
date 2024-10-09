@@ -3,7 +3,7 @@
 ## Frontend
 - 
 ## Backend
-- 
+- https://customer-management-api-grx3.onrender.com/api/test?format=json
 ## Unit Testing and Coverage checking
 - Unit testing is done using Django's inbuilt TestCase library together with **pytest**.
 - Simple test cases are written for the Customer and Order APIs and run using **coverage**.
