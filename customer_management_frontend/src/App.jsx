@@ -43,9 +43,10 @@ function App() {
       if(response.data.logged_in){
         console.log("Logged in")        
         setIsAuthenticated(true)
-      }else{
-        setIsAuthenticated(false)
       }
+      // else{
+      //   setIsAuthenticated(false)
+      // }
     } catch (error) {
       if(error.response && error.response.status == 401){
         console.log("User not authenticated", error.response.data)
