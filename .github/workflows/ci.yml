@@ -58,3 +58,10 @@ jobs:
       with:
         name: coverage-report
         path: customer_management_api/htmlcov
+
+    # - name: Deploy to Render
+    #   uses: render-examples/deploy-action@v1
+    #   with:
+    #       service-id: ${{ secrets.RENDER_SERVICE_ID }}
+    #       api-key: ${{ secrets.RENDER_API_KEY }}
+    #       wait-for-success: true
