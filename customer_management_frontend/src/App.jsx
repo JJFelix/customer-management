@@ -28,6 +28,8 @@ function App() {
 
   // const navigate = useNavigate()
   useEffect(()=>{
+    console.log("checkLoginStatus");
+    
     checkLoginStatus()
   }, [])
 
@@ -44,6 +46,7 @@ function App() {
       console.log("response.data", response.data)      
 
       if(response.data.logged_in){
+        console.log("Logged in")        
         setIsAuthenticated(true)
       }else{
         setIsAuthenticated(false)
@@ -54,8 +57,7 @@ function App() {
       setLoading(false)
     }
   }
-
-  
+ 
 
   if(loading){
     return <div>Loading...<i className="fa fa-spinner" aria-hidden="true"></i></div>

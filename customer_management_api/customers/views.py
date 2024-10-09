@@ -31,7 +31,9 @@ oauth.register(
 @api_view(['GET'])
 def login(request):
     # redirect_uri = request.build_absolute_uri(reverse("callback"))
-    redirect_uri = "https://customer-management-api-grx3.onrender.com/api/callback"
+    backend_url = "http://localhost:8000/api/callback"
+    # backend_url = "https://customer-management-api-grx3.onrender.com/api/callback"
+    redirect_uri = f"{backend_url}"
     return oauth.auth0.authorize_redirect(request, redirect_uri)
 
 # callback endpoint after successful login
@@ -39,19 +41,23 @@ def login(request):
 def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
+    frontend_url = "http://localhost:5173"
+    # frontend_url = "https://customer-management-client.onrender.com"
     # send token to frontend
-    return redirect(f"https://customer-management-client.onrender.com")#?token={token["access_token"]}")
+    return redirect(f"{frontend_url}")#?token={token["access_token"]}")
 
 
 def logout(request):
     request.session.clear()
+    frontend_url = "http://localhost:5173"
+    # frontend_url = "https://customer-management-client.onrender.com"
 
     logout_url = (
         f"https://{settings.AUTH0_DOMAIN}/v2/logout?"
         + urlencode(
             {
                 # "returnTo": request.build_absolute_uri(reverse("index")),
-                "returnTo": "https://customer-management-client.onrender.com",
+                "returnTo": f"{frontend_url}",
                 "client_id": settings.AUTH0_CLIENT_ID,
             },
             quote_via=quote_plus,
