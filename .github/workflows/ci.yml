@@ -46,6 +46,7 @@ jobs:
 
     - name: Run tests with coverage
       env:
+          SECRET_KEY: ${{ secrets.SECRET_KEY }}
           AFRICAS_TALKING_USERNAME: ${{ secrets.AFRICAS_TALKING_USERNAME }}
           AFRICAS_TALKING_API_KEY: ${{ secrets.AFRICAS_TALKING_API_KEY }}
       run: |
