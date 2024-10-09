@@ -7,7 +7,7 @@ const Login = () => {
     useEffect(()=>{
         
         // redirect user to backend login page to initiate the OAuth2 flow
-        window.location.href = `${backend_url}/api/login`
+        // window.location.href = `${backend_url}/api/login`
 
         // axios
         // .post(`${backend_url}/api/login`)
