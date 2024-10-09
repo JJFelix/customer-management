@@ -9,7 +9,7 @@ services:
     plan: free
     name: customer_management
     runtime: python
-    buildCommand: "./build.sh"
+    buildCommand: "./customer_management_api/build.sh"
     startCommand: "python -m gunicorn customer_management.asgi:application -k uvicorn..workers.UvicornWorker" enVars: 
       - key: DATABASE_URL
         fromDatabase:
