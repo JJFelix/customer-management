@@ -5,4 +5,6 @@ pip install --upgrade pip
 
 pip install -r requirements.txt
 
-python manage.py migrate customers
+python manage.py makemigrations customers
+
+python manage.py migrate
