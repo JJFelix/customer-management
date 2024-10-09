@@ -27,12 +27,17 @@ oauth.register(
     },
     server_metadata_url=f"https://{settings.AUTH0_DOMAIN}/.well-known/openid-configuration",
 )
+
+# backend_url = "http://localhost:8000/api/callback"
+backend_url = "https://customer-management-api-grx3.onrender.com/api/callback"
+
+# frontend_url = "http://localhost:5173" 
+frontend_url = "https://customer-management-client.onrender.com"
+
 # login endpoint
 @api_view(['GET'])
 def login(request):
-    # redirect_uri = request.build_absolute_uri(reverse("callback"))
-    backend_url = "http://localhost:8000/api/callback"
-    # backend_url = "https://customer-management-api-grx3.onrender.com/api/callback"
+    # redirect_uri = request.build_absolute_uri(reverse("callback"))  
     redirect_uri = f"{backend_url}"
     return oauth.auth0.authorize_redirect(request, redirect_uri)
 
@@ -41,17 +46,12 @@ def login(request):
 def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
-    frontend_url = "http://localhost:5173" 
-    # frontend_url = "https://customer-management-client.onrender.com"
     # send token to frontend
     return redirect(f"{frontend_url}")#?token={token["access_token"]}")
 
 
 def logout(request):
     request.session.clear()
-    frontend_url = "http://localhost:5173"
-    # frontend_url = "https://customer-management-client.onrender.com"
-
     logout_url = (
         f"https://{settings.AUTH0_DOMAIN}/v2/logout?"
         + urlencode(
