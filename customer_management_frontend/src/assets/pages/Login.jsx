@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 import { backend_url } from '../../App'
 
 const Login = () => {
-    const [token, setToken] = useState()
     useEffect(()=>{
         
         // redirect user to backend login page to initiate the OAuth2 flow
@@ -22,9 +21,14 @@ const Login = () => {
         // })
     }, [])
 
+    const handleLoginClick = () => {
+      window.location.href = `${backend_url}/api/login`
+    }
+
   return (
     <div className='main-wrapper'>
-        Checking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i>
+        {/* Checking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i> */}
+        <Link onClick={handleLoginClick()}>Click here to login</Link>
     </div>
   )
 }
