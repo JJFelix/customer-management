@@ -1,6 +1,8 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
+import { backend_url } from '../../App'
+
 const Login = () => {
     const [token, setToken] = useState()
     useEffect(()=>{

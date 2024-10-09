@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
+import { backend_url } from '../../App'
+
 const Logout = () => {
     const [token, setToken] = useState()
     useEffect(()=>{

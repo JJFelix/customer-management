@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import { backend_url } from '../../App'
+
 const Customers = () => {
   const [customers, setCustomers] = useState([])
 
