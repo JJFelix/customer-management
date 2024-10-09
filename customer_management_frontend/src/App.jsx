@@ -35,14 +35,9 @@ function App() {
 
   const checkLoginStatus = async () =>{
     try {
-      // const response = await fetch(`${backend_url}/api/is_logged_in`, {
-      //   method: "GET",
-      //   credentials: "include",
-      // })
-      const response = await axios.get(`${backend_url}/api/is_logged_in`,{
+       const response = await axios.get(`${backend_url}/api/is_logged_in`,{
         withCredentials: true,
       })
-      // const data = await response.json()
       console.log("response.data", response.data)      
 
       if(response.data.logged_in){
@@ -52,7 +47,12 @@ function App() {
         setIsAuthenticated(false)
       }
     } catch (error) {
-      console.error("Error checking login status:", error);      
+      if(error.response && error.response.status == 401){
+        console.log("User not authenticated", response.data)
+        setIsAuthenticated(false)        
+      } else{
+        console.error("Error checking login status:", error)
+      }
     }finally{
       setLoading(false)
     }

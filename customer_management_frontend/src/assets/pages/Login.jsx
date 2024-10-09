@@ -5,8 +5,23 @@ import { backend_url } from '../../App'
 import { Link } from 'react-router-dom'
 
 const Login = () => {
-    useEffect(()=>{
-        
+
+
+    const handleLoginClick = () => {
+      window.location.href = `${backend_url}/api/login`
+    }
+
+  return (
+    <div className='main-wrapper'>
+        {/* Checking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i> */}
+        <Link onClick={()=> handleLoginClick()}>Click here to login</Link>
+    </div>
+  )
+}
+
+export default Login
+
+    // useEffect(()=>{        
         // redirect user to backend login page to initiate the OAuth2 flow
         // window.location.href = `${backend_url}/api/login`
 
@@ -20,18 +35,4 @@ const Login = () => {
         // .catch(()=>{
         //     console.error(error.response.data.error);
         // })
-    }, [])
-
-    const handleLoginClick = () => {
-      window.location.href = `${backend_url}/api/login`
-    }
-
-  return (
-    <div className='main-wrapper'>
-        {/* Checking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i> */}
-        <Link onClick={handleLoginClick()}>Click here to login</Link>
-    </div>
-  )
-}
-
-export default Login
+    // }, [])

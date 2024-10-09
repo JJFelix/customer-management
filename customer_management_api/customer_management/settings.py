@@ -170,7 +170,6 @@ AUTH0_CLIENT_SECRET = os.getenv("AUTH0_CLIENT_SECRET")
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "https://customer-management-client.onrender.com",
-    "https://customer-management-api-grx3.onrender.com",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
