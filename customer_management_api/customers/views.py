@@ -41,7 +41,7 @@ def login(request):
 def callback(request):
     token = oauth.auth0.authorize_access_token(request)
     request.session["user"] = token
-    frontend_url = "http://localhost:5173"
+    frontend_url = "http://localhost:5173" 
     # frontend_url = "https://customer-management-client.onrender.com"
     # send token to frontend
     return redirect(f"{frontend_url}")#?token={token["access_token"]}")
