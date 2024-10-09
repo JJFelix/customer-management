@@ -4,11 +4,15 @@ Authlib==1.2.1
 certifi==2024.8.30
 cffi==1.15.1
 charset-normalizer==3.3.2
+click==8.1.7
 coverage==7.2.7
 cryptography==43.0.1
+dj-database-url==2.2.0
 Django==4.2.16
 django-cors-headers==4.4.0
 djangorestframework==3.15.2
+gunicorn==23.0.0
+h11==0.14.0
 idna==3.10
 iniconfig==2.0.0
 packaging==24.1
@@ -22,3 +26,4 @@ schema==0.7.7
 sqlparse==0.5.1
 typing_extensions==4.12.2
 urllib3==2.2.3
+uvicorn==0.31.0

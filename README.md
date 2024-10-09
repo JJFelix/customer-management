@@ -20,3 +20,5 @@
 ## CI + Automated CD 
 - Continuous Integration has been done using Github actions to automatically run tests and generate coverage reports on every push or pull request.
 - Defined in the *.github/workflows/ci.yml* file
+
+- Continuous Deployment has been done using Render, a freemium hosting platform that automatically deploys the application on push or pull request to the connected Github repository. 
