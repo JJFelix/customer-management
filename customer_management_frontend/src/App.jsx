@@ -27,10 +27,13 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   // const navigate = useNavigate()
+  useEffect(()=>{
+    checkLoginStatus()
+  }, [])
 
   const checkLoginStatus = async () =>{
     try {
-      // const response = await fetch("http://localhost:8000/api/is_logged_in", {
+      // const response = await fetch(`${backend_url}/api/is_logged_in`, {
       //   method: "GET",
       //   credentials: "include",
       // })
@@ -38,6 +41,7 @@ function App() {
         withCredentials: true,
       })
       // const data = await response.json()
+      console.log("response.data", response.data)      
 
       if(response.data.logged_in){
         setIsAuthenticated(true)
@@ -51,9 +55,7 @@ function App() {
     }
   }
 
-  useEffect(()=>{
-    checkLoginStatus()
-  }, [])
+  
 
   if(loading){
     return <div>Loading...<i className="fa fa-spinner" aria-hidden="true"></i></div>

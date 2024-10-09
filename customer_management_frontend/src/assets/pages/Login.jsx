@@ -24,7 +24,7 @@ const Login = () => {
 
   return (
     <div className='main-wrapper'>
-        Cheking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i>
+        Checking Login Status...<i className="fa fa-spinner" aria-hidden="true"></i>
     </div>
   )
 }
