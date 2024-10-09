@@ -32,7 +32,10 @@ SECRET_KEY = 'django-insecure-^*+^*chgfh05w%lbj2*6&@h4ks)*qqk#7h12y^f+jo8wuq*izp
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "https://customer-management-client.onrender.com",
+    "https://customer-management-api-grx3.onrender.com",
+]
 
 
 
@@ -101,7 +104,7 @@ WSGI_APPLICATION = 'customer_management.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         default=os.getenv("DATABASE_URL"),
-        conn_max_age=600
+        # conn_max_age=600
     )
 }
 
