@@ -125,21 +125,6 @@ def add_customer(request):
     print(serializer.errors)
     return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
 
-@api_view(['POST'])
-def post_customer(request):
-    # serializer = CustomerSerializer(data=request.data)
-
-    # # check if the data provided is valid
-    # if serializer.is_valid():
-    #     serializer.save() # save new customer record
-    #     print("Customer added successfully")
-    #     return Response({'success': 'Customer added successfully'}, status=status.HTTP_201_CREATED)
-
-    # # logging errors if data is invalid    
-    # print(serializer.errors)
-    # return Response({"error": serializer.errors}, status=status.HTTP_400_BAD_REQUEST)
-    return Response({"message": 'Hello'})
-
 
 def update_customer(request):
     pass
