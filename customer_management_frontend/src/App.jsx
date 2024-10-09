@@ -60,7 +60,8 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path='/' element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
+            <Route path='/' element={<Home />} />
+            {/* element={isAuthenticated ? <Home /> : <Navigate to="/login" />} /> */}
             <Route path='/customers' element={<Customers />} />
             <Route path='/customers/:customer_id' element={<CustomerOrder />} />
             <Route path='/add_customer' element={<AddCustomer />} />
