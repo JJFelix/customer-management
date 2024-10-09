@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
+import { backend_url } from '../../App'
+
 const AddOrder = () => {
     const [customers, setCustomers] = useState([]);
     const [orderData, setOrderData] = useState({
@@ -14,7 +16,7 @@ const AddOrder = () => {
     // Fetch customers to populate the dropdown
     useEffect(() => {
         axios
-        .get('http://localhost:8000/api/customers')
+        .get(`${backend_url}/api/customers`)
         .then((response) => {
             setCustomers(response.data.data)
             // console.log(customers)
@@ -40,7 +42,7 @@ const AddOrder = () => {
         console.log(orderData);
         
         axios
-        .post('http://localhost:8000/api/orders/add', orderData)
+        .post(`${backend_url}/api/orders/add`, orderData)
         .then((response) => {
             console.log('Order added successfully:', response.data)
             // Redirect to the orders page or show a success message

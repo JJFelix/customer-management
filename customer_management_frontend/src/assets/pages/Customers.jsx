@@ -7,7 +7,7 @@ const Customers = () => {
 
   useEffect(()=>{
     axios
-    .get(`http://localhost:8000/api/customers`)    
+    .get(`${backend_url}/api/customers`)    
     .then((response) =>{
       // console.log(response.data)
       setCustomers(response.data)      

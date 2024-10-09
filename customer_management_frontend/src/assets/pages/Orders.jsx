@@ -2,12 +2,14 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
+import { dateTime, backend_url } from '../../App'
+
 const Orders = () => {
   const [orders, setOrders] = useState([])
 
   useEffect(()=>{
     axios
-    .get(`http://localhost:8000/api/orders`)    
+    .get(`${backend_url}/api/orders`)    
     .then((response) =>{
       // console.log(response.data)
       setOrders(response.data)      
@@ -17,17 +19,17 @@ const Orders = () => {
     })
   }, [])
 
-  const dateTime = (e) =>{
-    const date = new Date(e)
-    const formatedDate = date.toLocaleDateString()
-    const formatedTime = date.toLocaleTimeString()
+  // const dateTime = (e) =>{
+  //   const date = new Date(e)
+  //   const formatedDate = date.toLocaleDateString()
+  //   const formatedTime = date.toLocaleTimeString()
 
-    return formatedDate +" at "+ formatedTime
-  }
+  //   return formatedDate +" at "+ formatedTime
+  // }
 
   const handleDeleteOrder = (order_id) =>{
     axios.
-    delete(`http://localhost:8000/api/orders/delete/${order_id}`)
+    delete(`${backend_url}/api/orders/delete/${order_id}`)
     .then((response) => {
       console.log(response.data.success);
       // Filter out the deleted order from the state

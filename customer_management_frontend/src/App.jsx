@@ -12,6 +12,16 @@ import AddOrder from './assets/pages/AddOrder'
 import axios from 'axios'
 import Logout from './assets/pages/Logout'
 
+export const backend_url = 'https://customer-management-api-grx3.onrender.com'
+// export const backend_url = 'http://localhost:8000'
+
+export const dateTime = (e) =>{
+  const date = new Date(e)
+  const formatedDate = date.toLocaleDateString()
+  const formatedTime = date.toLocaleTimeString()
+
+  return formatedDate +" at "+ formatedTime
+}
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [loading, setLoading] = useState(true)
@@ -24,7 +34,7 @@ function App() {
       //   method: "GET",
       //   credentials: "include",
       // })
-      const response = await axios.get("http://localhost:8000/api/is_logged_in",{
+      const response = await axios.get(`${backend_url}/api/is_logged_in`,{
         withCredentials: true,
       })
       // const data = await response.json()
@@ -60,8 +70,7 @@ function App() {
         <BrowserRouter>
           <Navbar />
           <Routes>
-            <Route path='/' element={<Home />} />
-            {/* element={isAuthenticated ? <Home /> : <Navigate to="/login" />} /> */}
+            <Route path='/' element={isAuthenticated ? <Home /> : <Navigate to="/login" />} />
             <Route path='/customers' element={<Customers />} />
             <Route path='/customers/:customer_id' element={<CustomerOrder />} />
             <Route path='/add_customer' element={<AddCustomer />} />

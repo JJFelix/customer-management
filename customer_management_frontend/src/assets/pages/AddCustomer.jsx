@@ -2,6 +2,8 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
+import { backend_url } from '../../App'
+
 const AddCustomer = () => {
     const [userData, setUserData] = useState({
         name: "",
@@ -15,7 +17,7 @@ const AddCustomer = () => {
 
         console.log('user details: ', userData);
         axios
-        .post(`http://localhost:8000/api/customers/add/`, userData)
+        .post(`${backend_url}/api/customers/add/`, userData)
         .then((response)=>{
             console.log(response.data)    
             navigate('/customers')        

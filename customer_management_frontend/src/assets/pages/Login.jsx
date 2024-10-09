@@ -6,10 +6,10 @@ const Login = () => {
     useEffect(()=>{
         
         // redirect user to backend login page to initiate the OAuth2 flow
-        window.location.href = "http://localhost:8000/api/login"
+        window.location.href = `${backend_url}/api/login`
 
         // axios
-        // .post(`http://localhost:8000/api/login`)
+        // .post(`${backend_url}/api/login`)
         // .then(()=>{
         //     // setToken(response.data)  
         //     console.log("Logged in");
