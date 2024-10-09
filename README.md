@@ -8,6 +8,7 @@
     - amount
     - time added
 - The order is matched to a specific user, and an SMS is sent to the user's phone number when a matching order has been added.
+- The application can be accessed here: https://customer-management-client.onrender.com/
 
 ## Frontend
 - The frontend has been built using **ReactJS** using **Vite** and **pnpm** as the node package manager.
