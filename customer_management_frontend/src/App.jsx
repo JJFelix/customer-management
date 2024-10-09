@@ -48,7 +48,7 @@ function App() {
       }
     } catch (error) {
       if(error.response && error.response.status == 401){
-        console.log("User not authenticated", response.data)
+        console.log("User not authenticated", error.response.data)
         setIsAuthenticated(false)        
       } else{
         console.error("Error checking login status:", error)
